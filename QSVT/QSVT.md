@@ -130,7 +130,7 @@ Let $\Sigma_{\varsigma}$ be the matrix that we get from $\Sigma$ by replacing al
 
 Then we define the right singular value projector to singular value $\varsigma$ as $V \Sigma_{\varsigma} V^\dagger$, and define the left singular value projector to singular value $\varsigma$ as $W \Sigma_{\varsigma} W^\dagger$ projecting orthogonally to the subspace spanned by the corresponding singular vectors. 
 
-For a set $S \subset \R$ we similarly define the right and left singular value projectors $V \Sigma_{S} V^\dagger$, $W \Sigma_{S} W^{\dagger}$ projecting orthogonally to the subspace spanned by the singular vectors having singular value in $S$.
+For a set $S \subset \mathbb{R}$ we similarly define the right and left singular value projectors $V \Sigma_{S} V^\dagger$, $W \Sigma_{S} W^{\dagger}$ projecting orthogonally to the subspace spanned by the singular vectors having singular value in $S$.
 
 
 ## Polynomial approximations
@@ -139,13 +139,13 @@ In this paper we will work with polynomial approximations, and therefore we intr
 
 For a function $f : I \rightarrow \mathbb{C}$ and a subset $I' \subseteq I$ we use the notation $||f||_{I'}:=\sup_{x\in I'}|f(x)|$ to denote the sup-norm of the function $f$ on the domain $I'$. 
 
-We say that a function $f \colon \mathbb{R} \rightarrow \mathbb{C}$ _is even_ if for all $x \in \mathbb{R}$ we have $f(-x) = f(x)$, and that it _is odd_ if for all $x\in\R$ we have $f(-x) = -f(x)$.
+We say that a function $f \colon \mathbb{R} \rightarrow \mathbb{C}$ _is even_ if for all $x \in \mathbb{R}$ we have $f(-x) = f(x)$, and that it _is odd_ if for all $x\in\mathbb{R}$ we have $f(-x) = -f(x)$.
 
 Let $P\in \mathbb{C}[x]$ be a complex polynomial $P(x)=\sum_{j=0}^{k}a_jx^j$, then we denote by $P^*(x):=\sum_{j=0}^{k}a^*_jx^j$ the polynomial with conjugated coefficients, and let $\Re[P](x):=\sum_{j=0}^{k}\Re[a_j]x^j$ denote the real polynomial we get by taking the real part of the coefficients. 
 
-We say that $P$ _is even_ if all coefficients corresponding to odd powers of $x$ are $0$, and similarly we say that $P$ _is odd_ if all coefficients corresponding to even powers of $x$ are $0$. For an integer number $z \in \Z$ we say that $P$ has parity $z$ if $z$ is even and $P$ is even or $z$ is odd and $P$ is odd. 
+We say that $P$ _is even_ if all coefficients corresponding to odd powers of $x$ are $0$, and similarly we say that $P$ _is odd_ if all coefficients corresponding to even powers of $x$ are $0$. For an integer number $z \in \mathbb{Z}$ we say that $P$ has parity $z$ if $z$ is even and $P$ is even or $z$ is odd and $P$ is odd. 
 
-We will denote by $T_{d} \in \R[x]$ the $d$-th Chebyshev polynomial of the first kind, defined by $T_d(x) := \cos(d \arccos(x))$
+We will denote by $T_{d} \in \mathbb{R}[x]$ the $d$-th Chebyshev polynomial of the first kind, defined by $T_d(x) := \cos(d \arccos(x))$
 
 Whenever we present a matrix and put a $.$ in some place we mean a matrix with arbitrary values of the elements in the unspecified block. For example $[.]$ just denotes a matrix with completely arbitrary elements, similarly 
 $$
@@ -157,9 +157,9 @@ A & . \\
 $$
 denotes an arbitrary matrix whose top-left block is $A$.
 
-For an orthogonal projector $\Pi$ we will frequently use the $\Pi$-controlled NOT gate, denoted by C$_\Pi$NOT, which implements a coherent measurement operator by flipping the value of a qubit based on whether the state of a register is in the image of $\Pi$ or not. For example if $\Pi=\ket{1} \bra{1}$, then we just get back the usual CNOT gate controlled by the second qubit.
+For an orthogonal projector $\Pi$ we will frequently use the $\Pi$-controlled NOT gate, denoted by $C_{\Pi} NOT$, which implements a coherent measurement operator by flipping the value of a qubit based on whether the state of a register is in the image of $\Pi$ or not. For example if $\Pi=\ket{1} \bra{1}$, then we just get back the usual CNOT gate controlled by the second qubit.
 
-## C$_\Pi$NOT gate
+## $C_{\Pi} NOT$ gate
 For an orthogonal projector $\Pi$ let us define the $\Pi$-controlled NOT gate as the unitary operator
 
 $$
