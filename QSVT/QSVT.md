@@ -141,7 +141,7 @@ For a function $f : I \rightarrow \mathbb{C}$ and a subset $I' \subseteq I$ we u
 
 We say that a function $f \colon \mathbb{R} \rightarrow \mathbb{C}$ _is even_ if for all $x \in \mathbb{R}$ we have $f(-x) = f(x)$, and that it _is odd_ if for all $x\in\mathbb{R}$ we have $f(-x) = -f(x)$.
 
-Let $P\in \mathbb{C}[x]$ be a complex polynomial $P(x)=\sum_{j=0}^{k}a_jx^j$, then we denote by $P^*(x):=\sum_{j=0}^{k}a^*_jx^j$ the polynomial with conjugated coefficients, and let $\Re[P](x):=\sum_{j=0}^{k}\Re[a_j]x^j$ denote the real polynomial we get by taking the real part of the coefficients. 
+Let $P\in \mathbb{C}[x]$ be a complex polynomial $P(x) = \sum_{j=0}^{k} a_{j} x^{j}$, then we denote by $P^*(x) := \sum_{j=0}^{k} a^{*}_{j} x^{j}$ the polynomial with conjugated coefficients, and let $\Re[P](x) := \sum_{j=0}^{k} \Re[a_j] x^{j}$ denote the real polynomial we get by taking the real part of the coefficients. 
 
 We say that $P$ _is even_ if all coefficients corresponding to odd powers of $x$ are $0$, and similarly we say that $P$ _is odd_ if all coefficients corresponding to even powers of $x$ are $0$. For an integer number $z \in \mathbb{Z}$ we say that $P$ has parity $z$ if $z$ is even and $P$ is even or $z$ is odd and $P$ is odd. 
 
