@@ -12,10 +12,45 @@ is infinite. Indeed, braid groups are torsionfree. Also unlike symmetric groups 
 
 (Also, "permutation group" refers to any subgroup of a symmetric group.)
 
----
 
 From wikipedia:
 
 All strands are required to move from left to right; knots like the following are not considered braids:
 
 ![](.graphics/2023-04-18-19-12-44.png)
+
+---
+
+From [Stack exchange](https://physics.stackexchange.com/a/63656):
+Topological Charge. What is it Physically?
+
+
+
+Local quasiparticle excitations and topological quasiparticle excitations
+
+To understand and classify anyonic quasiparticles in topologically ordered states, such as FQH states, it is important to understand the notions of local quasiparticle excitations and topological quasiparticle excitations. First let us define the notion of ''particle-like'' excitations.
+
+Let us consider a system with translation symmetry. The ground state has a uniform energy density. If we have a state with an excitation, we can observe the energy distribution of the state over the space. If for some local area the energy density is higher than ground state, while for the rest area the energy density is the same as ground state, one may say there is a ``particle-like'' excitation, or a quasiparticle, in this area. Quasiparticles defined like this can be further divided into two types. The first type can be created or annihilated by local operators, such as a spin flip. Hence they are not robust under perturbations. The second type are robust states. The higher local energy density cannot be created or removed by any local operators in that area. We will refer the first type of quasiparticles as local quasiparticles, and the second type of quasiparticles as topological quasiparticles.
+
+As an simple example, consider the 1D Ising model with open boundary condition. There are two ground states, spins all up or all down. Simply flipping one spin of the ground state leads to the second excited state, and creates a local quasiparticle. On the other hand, the first excited state looks like a domain wall. For example the spins on the left are all up while those on the right all down, and the domain wall between the up domain and the down domain is a topological quasiparticle. Flipping the spins next to the domain wall moves the quasiparticle but cannot remove it. Such quasiparticles is protected by the boundary condition. As long as as the two edge spins are opposite, there will be at least one domain wall, or one topological quasiparticle in the bulk. Moreover a spin flip can be viewed as two domain walls.
+
+From the notions of local quasiparticles and topological quasiparticles, we can also introduce a notion topological quasiparticle types (ie topological charges), or simply, quasiparticle types. We say that local quasiparticles are of the trivial type, while topological quasiparticles are of non-trivial types. Also two topological quasiparticles are of the same type if and only if they differ by local quasiparticles. In other words, we can turn one topological quasiparticle into the other one by applying some local operators. The total number of the topological quasiparticle types (including the trivial type) is also a topological property. It turns out that this topological property is directly related to another topological property for 2+1D topological states: The number of the topological quasiparticle types equal to the ground state degeneracy on torus. This is one of many amazing and deep relations in topological order.
+
+See also Why is fractional statistics and non-Abelian common for fractional charges?, A physical understanding of fractionalization, and Whis is the difference between charge fractionalization in 1D and 2D?
+
+---
+
+Wikipedia: [Topological quantum number](https://en.wikipedia.org/wiki/Topological_quantum_number)
+
+---
+
+
+From [Stack exchange](https://physics.stackexchange.com/a/208535):
+How can I derive fusion rules for anyons?
+
+[Read in browser]
+
+---
+
+Book: [Introduction to Topological Quantum Computation](https://theory.leeds.ac.uk/topologicalquantumcomputation/)
+
