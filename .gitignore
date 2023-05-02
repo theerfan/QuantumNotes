@@ -1,3 +1,4 @@
 # I might add the TeX files of paper to copy the equations from
 # But I don't want to add the .tex files to the repository
 *.tex
+*.pdf
