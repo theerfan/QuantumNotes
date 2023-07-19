@@ -2,3 +2,5 @@
 # But I don't want to add the .tex files to the repository
 *.tex
 *.pdf
+*.mp4
+*.srt
