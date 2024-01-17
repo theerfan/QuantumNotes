@@ -27,7 +27,7 @@ b_{m}(x, \theta) = \sum_{k} u_{mk}(\theta) a_k(x)
 $$
 (Meaning that the new coefficients are linear combinations of the old coefficients, under unitary constraints imposed by $U(\theta)$.)
 
-When the function we're trying to learn f(x) is an _analytical function_, we can show that QCL is able to approximate it by considering a simple case with an input state created by single-qubit rotations. (The tensor product structure of quantum systems becomes important here)
+When the function we're trying to learn $f(x)$ is an _analytical function_, we can show that QCL is able to approximate it by considering a simple case with an input state created by single-qubit rotations. (The tensor product structure of quantum systems becomes important here)
 
 ---
 

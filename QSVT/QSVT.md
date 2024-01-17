@@ -185,7 +185,7 @@ $$
 
 # Qubitization and Singular value transformations
 
-The methods in this section are based on the so called ``Quantum Signal Processing'' techniques introduced by Low, Yoder and Chuang. \
+The methods in this section are based on the so called ``Quantum Signal Processing'' techniques introduced by Low, Yoder and Chuang. \eee
 In this section we present a self-contained treatment of these techniques. 
 
 We suggest the first-time reader to skip the proofs in the next subsection, as they are not necessary in order to understand the main ideas of the the remaining sections.
