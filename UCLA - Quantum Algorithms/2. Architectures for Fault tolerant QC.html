@@ -1,79 +1,146 @@
-From: https://www.youtube.com/watch?v=BSZsH4dBBbc&t=2361s
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. Architectures for Fault tolerant QC</title>
+<link rel="stylesheet" href="surface-code-lattice.css">
+</head>
+<body>
 
-A quantum code $\ket{\psi} \rightarrow \ket{\bar{\psi}}$ which is a static memory representing the original state isn't enough, we also need to have a Fault-tolerant channel which maps $H \ket{\psi} \rightarrow ?$ to have dynamic logic in there as well.
+<p>From: <a href="https://www.youtube.com/watch?v=BSZsH4dBBbc&amp;t=2361s">https://www.youtube.com/watch?v=BSZsH4dBBbc&amp;t=2361s</a></p>
 
-## Surface Code
+<p>A quantum code $\ket{\psi} \rightarrow \ket{\bar{\psi}}$ which is a static memory representing the original state isn't enough, we also need to have a Fault-tolerant channel which maps $H \ket{\psi} \rightarrow ?$ to have dynamic logic in there as well.</p>
 
-This is the code that's most likely to be in the first generation of Quantum Computers, the reason for that is that:
-1. It has a particularly high threshold against errors
-2. It's pretty practical because you can easily emebed it into a $2d$ lattice of qubits. 
+<h2 id="surface-code">Surface Code</h2>
 
-Below is the outline of the surface code:
+<p>This is the code that's most likely to be in the first generation of Quantum Computers, the reason for that is that:</p>
+<ol>
+<li>It has a particularly high threshold against errors</li>
+<li>It's pretty practical because you can easily emebed it into a $2d$ lattice of qubits.</li>
+</ol>
 
-![](.graphics/2023-01-26-16-03-26.png)
+<p>Below is the outline of the surface code:</p>
 
-In this schema, $1$ logical qubit is encoded into this $2d$ lattice of qubits.
+<figure class="sc" data-preset="outline" id="lattice-outline">
+  <div class="sc-mount"></div>
+  <figcaption>
+    <strong>Interactive lattice.</strong> A qubit sits on every edge. $\bar{Z}$ (blue) is a column of $Z$'s
+    along one line of the grid; $\bar{X}$ (red) is a row of $X$'s cutting <em>through</em> the lines. They meet
+    at exactly one qubit (ringed), the only place where an $X$ meets a $Z$, so $\bar{X}\bar{Z} = -\bar{Z}\bar{X}$.
+    Switch to <em>Toric</em> to connect top to bottom and left to right: the torus then carries two logical qubits.
+    Tap an edge to put an $X$, $Z$ or $Y$ error on it and watch which checks light up.
+  </figcaption>
+</figure>
 
-This version of the grid, with boundaries at the start and stop is called the __planar__ code, and if we connect the top to bottom and left to right, we get the __toric__ code (Be ause our surface will be a torus). You might also have a torus with $2$ holes in it, whiuch could represent a different number of logical qubits.
+<details class="board">
+  <summary>Original board photo: the outline of the surface code</summary>
+  <img src=".graphics/2023-01-26-16-03-26.png" alt="Hand-drawn square grid with a qubit on every edge; a column of Z's labelled Z-bar and a row of X's labelled X-bar crossing at one point.">
+</details>
 
-In this $2$d lattice, every edge is a qubit, the $\bar{Z}$ operator is a column of $Z$ operators being applied to the qubits in the column, and the $\bar{X}$ operator is a row of $X$ operators being applied to the qubits in the row.
+<p>In this schema, $1$ logical qubit is encoded into this $2d$ lattice of qubits.</p>
 
-We see that each row and each column only have $1$ point (qubit) of interaction, so when we apply a $\bar{X} \bar{Z}$ operator to the lattice, every $Z$ and every $X$ operator will overlap with an $I$ operator, except for the $XZ$ and $ZX$ operators at the point of interaction. \
-And since we know that $XZ = -ZX$, we can say that this identity is preserved for the $\bar{X}$ and $\bar{Z}$ operators as well. $\bar{X}\bar{Z} = - \bar{Z}\bar{X}$ \
-(The only $-1$ factor comes from the point of interaction)
+<p>This version of the grid, with boundaries at the start and stop is called the <strong>planar</strong> code, and if we connect the top to bottom and left to right, we get the <strong>toric</strong> code (Be ause our surface will be a torus). You might also have a torus with $2$ holes in it, whiuch could represent a different number of logical qubits.</p>
 
-As we see in the below figure, we can take __any__ string of $Z$'s that goes from top to bottom which overlaps with a __particular__ $\bar{X}$ operator at only one location as a $\bar{Z}$ operator. 
+<p>In this $2$d lattice, every edge is a qubit, the $\bar{Z}$ operator is a column of $Z$ operators being applied to the qubits in the column, and the $\bar{X}$ operator is a row of $X$ operators being applied to the qubits in the row.</p>
 
-![](.graphics/2023-01-26-16-16-57.png)
+<p>We see that each row and each column only have $1$ point (qubit) of interaction, so when we apply a $\bar{X} \bar{Z}$ operator to the lattice, every $Z$ and every $X$ operator will overlap with an $I$ operator, except for the $XZ$ and $ZX$ operators at the point of interaction.<br>
+And since we know that $XZ = -ZX$, we can say that this identity is preserved for the $\bar{X}$ and $\bar{Z}$ operators as well. $\bar{X}\bar{Z} = - \bar{Z}\bar{X}$<br>
+(The only $-1$ factor comes from the point of interaction)</p>
 
-So we see that there's a whole set of different logical operators that all have the right properties so this system has redundancy. 
+<p>As we see in the below figure, we can take <strong>any</strong> string of $Z$'s that goes from top to bottom which overlaps with a <strong>particular</strong> $\bar{X}$ operator at only one location as a $\bar{Z}$ operator.</p>
 
-The same goes for the $X$ operator, note that the only restriction here is that it should have only $1$ interaction with each $Z$ in the system. As seen below: 
+<details class="board">
+  <summary>Original board photo: other $\bar{Z}$ strings (interactive version below)</summary>
+  <img src=".graphics/2023-01-26-16-16-57.png" alt="The same grid with several wiggly blue Z strings running top to bottom, each crossing the X-bar row at one circled qubit.">
+</details>
 
-![](.graphics/2023-01-26-16-18-57.png)
+<p>So we see that there's a whole set of different logical operators that all have the right properties so this system has redundancy.</p>
 
-(Notice that the $Z$ operators are on the lines of the grid while the $X$ operators are going _through_ the lines which is how it's supposed to be to get the anti-commutation property)
+<p>The same goes for the $X$ operator, note that the only restriction here is that it should have only $1$ interaction with each $Z$ in the system. As seen below:</p>
 
-Because of the "wiggly" shape that these operators can take, we call them __topologically non-trivial__ operators.
+<figure class="sc" data-preset="deform" id="lattice-deform">
+  <div class="sc-mount"></div>
+  <figcaption>
+    <strong>Deforming logical operators.</strong> Both strings here have already been bent. Tap a square
+    (a plaquette, $Z$ on its edges) to multiply it into $\bar{Z}$, or a dot (a star, $X$ on the edges meeting
+    there) to multiply it into $\bar{X}$. The strings wiggle but never light up a check, and they always cross
+    an odd number of times, so $\bar{X}\bar{Z} = -\bar{Z}\bar{X}$ for every choice.
+  </figcaption>
+</figure>
 
-### Stabilizers of the Surface Code
+<details class="board">
+  <summary>Original board photo: deformed $\bar{X}$ strings</summary>
+  <img src=".graphics/2023-01-26-16-18-57.png" alt="The grid with wiggly Z strings plus two red X strings drawn through the lines lower down, one straight and one with a detour, each meeting every Z string once.">
+</details>
 
-Another property of the Pauli operators (which we want to preserve in this code and its operators) is that their squares are $I$ operators. \
-i.e. $Z^2 = I$, $Z^2 \ket{\psi} = \ket{\psi}$.
+<p>(Notice that the $Z$ operators are on the lines of the grid while the $X$ operators are going <em>through</em> the lines which is how it's supposed to be to get the anti-commutation property)</p>
 
-So let's see how this works out in this surface code.
+<p>Because of the "wiggly" shape that these operators can take, we call them <strong>topologically non-trivial</strong> operators.</p>
 
-![](.graphics/2023-01-26-16-57-58.png)
+<h3 id="stabilizers-of-the-surface-code">Stabilizers of the Surface Code</h3>
 
-If we apply two strings of $Z$ operators on the __same__ path, they will cancel out and give a $\bar{I}$ operator for the system.
+<p>Another property of the Pauli operators (which we want to preserve in this code and its operators) is that their squares are $I$ operators.<br>
+i.e. $Z^2 = I$, $Z^2 \ket{\psi} = \ket{\psi}$.</p>
 
-But what if we apply two strings of $Z$ operators on __different__ paths? (like the $\bar{Z_1}, \bar{Z_2}$ operators in the right part of the figure)
+<p>So let's see how this works out in this surface code.</p>
 
-We see that obviously $\bar{Z_1} \bar{Z_2} \neq \bar{I}$.
+<details class="board" open>
+  <summary>Original board photo: $\bar{Z}^2$ and $\bar{Z}_{(1)}\bar{Z}_{(2)}$</summary>
+  <img src=".graphics/2023-01-26-16-57-58.png" alt="Board titled Stabilizers: on the left two Z strings on the same column (Z squared); on the right two Z strings, one straight and one with a rectangular detour.">
+</details>
 
-But since this code is correct (TODO: proof?), we know that the second form of the property is preserved:
+<p>If we apply two strings of $Z$ operators on the <strong>same</strong> path, they will cancel out and give a $\bar{I}$ operator for the system.</p>
 
-$$
+<p>But what if we apply two strings of $Z$ operators on <strong>different</strong> paths? (like the $\bar{Z_1}, \bar{Z_2}$ operators in the right part of the figure)</p>
+
+<p>We see that obviously $\bar{Z_1} \bar{Z_2} \neq \bar{I}$.</p>
+
+<p>But since this code is correct (TODO: proof?), we know that the second form of the property is preserved:</p>
+
+<p>$$
 \bar{Z_1}\bar{Z_2} \ket{\bar{\psi}} = \ket{\bar{\psi}}
-$$
+$$</p>
 
-Meaning that after applying the $\bar{Z_1}$ and $\bar{Z_2}$ operators, the state represented by the code is still the same.
+<p>Meaning that after applying the $\bar{Z_1}$ and $\bar{Z_2}$ operators, the state represented by the code is still the same.</p>
 
-This means that the operators that don't trivially cancel each other out (as seen in the orange section of below figure):
+<p>This means that the operators that don't trivially cancel each other out (as seen in the orange section of below figure):</p>
 
-![](.graphics/2023-01-26-17-02-23.png)
+<details class="board" open>
+  <summary>Original board photo: the loop $S$</summary>
+  <img src=".graphics/2023-01-26-17-02-23.png" alt="The same board; the part of the two Z strings that does not cancel forms a closed loop, outlined in orange and labelled S.">
+</details>
 
-This loop, which we'll call $S$ has to have a trivial action of the state and it is called a __stabilizer__ of the surface code.
+<p>This loop, which we'll call $S$ has to have a trivial action of the state and it is called a <strong>stabilizer</strong> of the surface code.</p>
 
-$$
+<p>$$
 S \ket{\bar{\psi}} = \ket{\bar{\psi}}
-$$
+$$</p>
 
-Going through a bunch of different examples, we can see that these operators always form _loops_ in the grid, and these operators in one grid form a __stabilizer group__. \
-These groups are generated by the smallest possible loops which are called plaquette operators. 
+<p>Going through a bunch of different examples, we can see that these operators always form <em>loops</em> in the grid, and these operators in one grid form a <strong>stabilizer group</strong>.<br>
+These groups are generated by the smallest possible loops which are called plaquette operators.</p>
 
-![](.graphics/2023-01-26-17-05-23.png)
+<details class="board" open>
+  <summary>Original board photo: other loops and a single plaquette</summary>
+  <img src=".graphics/2023-01-26-17-05-23.png" alt="The board with more orange loops: an L-shaped loop, a tall rectangle, and on the left the smallest square with a Z on each of its four edges.">
+</details>
 
-The smallest possible square on the left is called a _plaquette_ and the operators that go through it are called _plaquette operators_. \
+<p>The smallest possible square on the left is called a <em>plaquette</em> and the operators that go through it are called <em>plaquette operators</em>.</p>
 
-[Stopped at 39:20]
+<figure class="sc" data-preset="syndrome" id="lattice-stabilizers">
+  <div class="sc-mount"></div>
+  <figcaption>
+    <strong>Loops, strings and syndromes.</strong> The blue loop is a product of four plaquettes (a loop like $S$):
+    it lights up nothing, so it acts trivially on the code. Open strings light up checks only at their ends.
+    $Z$ errors (blue, along the lines) flip the <em>star</em> checks ($X$ on the edges at a vertex) at their
+    endpoints; $X$ errors (red, through the lines) flip the <em>plaquette</em> checks. Tap squares or dots to
+    multiply in plaquettes or stars: close a string into a loop and its syndrome disappears; stretch a $Z$
+    string from top to bottom and it becomes an undetectable $\bar{Z}$.
+  </figcaption>
+</figure>
+
+<p>[Stopped at 39:20]</p>
+
+<script src="surface-code-lattice.js"></script>
+</body>
+</html>
